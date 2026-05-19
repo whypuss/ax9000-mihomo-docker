@@ -154,37 +154,95 @@ proxy-groups:
       - 香港節點-VLESS-示例
       - 美國節點-Trojan-示例
 
-# ===== 分流規則 =====
+# ===== 分流規則（xray 等級：keyword + domain + suffix 三重覆蓋）=====
 rules:
-  # AI 服務（ChatGPT / Claude / Gemini 等）
+  # 🤖 OpenAI / ChatGPT
+  - DOMAIN-KEYWORD,chatgpt,auto
   - DOMAIN-SUFFIX,chatgpt.com,auto
   - DOMAIN-SUFFIX,openai.com,auto
   - DOMAIN-SUFFIX,api.openai.com,auto
+  - DOMAIN-SUFFIX,openaicom.imgix.net,auto
+  - DOMAIN-SUFFIX,openaiassets.com,auto
+
+  # 🧠 Anthropic / Claude
+  - DOMAIN-KEYWORD,claude,auto
   - DOMAIN-SUFFIX,claude.ai,auto
   - DOMAIN-SUFFIX,platform.claude.ai,auto
+  - DOMAIN-SUFFIX,code.claude.ai,auto
   - DOMAIN-SUFFIX,anthropic.com,auto
   - DOMAIN-SUFFIX,api.anthropic.com,auto
+
+  # 🔵 Google AI / Gemini / Vertex / Bard
+  - DOMAIN-KEYWORD,google-ai,auto
+  - DOMAIN-KEYWORD,gemini,auto
   - DOMAIN-SUFFIX,aistudio.google.com,auto
   - DOMAIN-SUFFIX,ai.google.dev,auto
+  - DOMAIN-SUFFIX,makersuite.google.com,auto
+  - DOMAIN-SUFFIX,bard.google.com,auto
   - DOMAIN-SUFFIX,gemini.google.com,auto
+  - DOMAIN-SUFFIX,generativelanguage.googleapis.com,auto
+  - DOMAIN-SUFFIX,vertexai.cloud.google.com,auto
+
+  # 💙 Microsoft / Copilot / Bing
+  - DOMAIN-KEYWORD,copilot,auto
+  - DOMAIN-SUFFIX,copilot.microsoft.com,auto
+  - DOMAIN-SUFFIX,bing.com,auto
+
+  # 🐍 DeepSeek / Perplexity / Grok
   - DOMAIN-SUFFIX,deepseek.com,auto
+  - DOMAIN-SUFFIX,api.deepseek.com,auto
   - DOMAIN-SUFFIX,perplexity.ai,auto
-  # 搜索引擎 / 影片
+  - DOMAIN-SUFFIX,grok.com,auto
+
+  # 📺 Google 全家桶 / YouTube
   - DOMAIN-SUFFIX,google.com,auto
-  - DOMAIN-SUFFIX,youtube.com,auto
+  - DOMAIN-SUFFIX,googleapis.com,auto
+  - DOMAIN-SUFFIX,googleusercontent.com,auto
+  - DOMAIN-SUFFIX,googlevideo.com,auto
   - DOMAIN-SUFFIX,ytimg.com,auto
-  # 社交媒體
+  - DOMAIN-SUFFIX,youtube.com,auto
+  - DOMAIN-SUFFIX,youtu.be,auto
+
+  # 🐦 X / Twitter / Threads / Instagram
   - DOMAIN-SUFFIX,x.com,auto
   - DOMAIN-SUFFIX,twitter.com,auto
+  - DOMAIN-SUFFIX,twimg.com,auto
   - DOMAIN-SUFFIX,threads.net,auto
-  - DOMAIN-SUFFIX,threads.com,auto
-  # 關鍵字匹配
-  - DOMAIN-KEYWORD,chatgpt,auto
-  - DOMAIN-KEYWORD,claude,auto
-  - DOMAIN-KEYWORD,openai,auto
-  - DOMAIN-KEYWORD,anthropic,auto
-  - DOMAIN-KEYWORD,gemini,auto
-  # 默認：其餘流量直連（改成 auto就走代理）
+  - DOMAIN-SUFFIX,instagram.com,auto
+
+  # 💬 Telegram / Discord
+  - DOMAIN-SUFFIX,telegram.me,auto
+  - DOMAIN-SUFFIX,telegram.org,auto
+  - DOMAIN-SUFFIX,discord.com,auto
+  - DOMAIN-SUFFIX,discordapp.net,auto
+
+  # 🛠️ GitHub / NPM
+  - DOMAIN-SUFFIX,github.com,auto
+  - DOMAIN-SUFFIX,githubusercontent.com,auto
+  - DOMAIN-SUFFIX,npmjs.com,auto
+
+  # 🌐 出口 IP 檢測
+  - DOMAIN-SUFFIX,ip.sb,auto
+  - DOMAIN-SUFFIX,ipinfo.io,auto
+
+  # 🛡️ 廣告 REJECT
+  - DOMAIN-SUFFIX,doubleclick.net,REJECT
+  - DOMAIN-SUFFIX,googlesyndication.com,REJECT
+  - DOMAIN-SUFFIX,googleadservices.com,REJECT
+  - DOMAIN-SUFFIX,moatads.com,REJECT
+  - DOMAIN-SUFFIX,adnxs.com,REJECT
+  - DOMAIN-SUFFIX,criteo.com,REJECT
+  - DOMAIN-SUFFIX,amazon-adsystem.com,REJECT
+  - DOMAIN-SUFFIX,outbrain.com,REJECT
+  - DOMAIN-SUFFIX,taboola.com,REJECT
+  - DOMAIN-SUFFIX,popads.net,REJECT
+  - DOMAIN-SUFFIX,baidustatic.com,REJECT
+  - DOMAIN-SUFFIX,umeng.com,REJECT
+  - DOMAIN-SUFFIX,appsflyer.com,REJECT
+  - DOMAIN-SUFFIX,telemetry.microsoft.com,REJECT
+  - DOMAIN-SUFFIX,scorecardresearch.com,REJECT
+
+  # ⏭️ 默認直連
   - MATCH,DIRECT
 ```
 

@@ -81,34 +81,173 @@ proxy-groups:
       # - 美國-Trojan
 
 # ===== 分流規則 =====
+#
+# 匹配方式說明：
+#   DOMAIN-SUFFIX  = 域名後綴（例：chatgpt.com 匹配所有 *.chatgpt.com）
+#   DOMAIN-KEYWORD = 域名包含關鍵字（例：chatgpt 匹配任何含 chatgpt 的域名）
+#   DOMAIN         = 完整精確域名（例：api.openai.com 只匹配這一個子域名）
+#
+# xray 等級詳細規則：keyword + domain + suffix 三重覆蓋，無漏網之魚
+#
 rules:
-  # AI 服務
+  # ══════════════════════════════════════════════════════
+  # 🤖 AI 服務（OpenAI / ChatGPT）
+  # ══════════════════════════════════════════════════════
+  - DOMAIN-KEYWORD,chatgpt,auto
   - DOMAIN-SUFFIX,chatgpt.com,auto
   - DOMAIN-SUFFIX,openai.com,auto
   - DOMAIN-SUFFIX,api.openai.com,auto
+  - DOMAIN-SUFFIX,openaicom.imgix.net,auto
+  - DOMAIN-SUFFIX,openaiassets.com,auto
+  - DOMAIN-SUFFIX,completion.openaai.com,auto
+
+  # ══════════════════════════════════════════════════════
+  # 🧠 AI 服務（Anthropic / Claude）
+  # ══════════════════════════════════════════════════════
+  - DOMAIN-KEYWORD,claude,auto
   - DOMAIN-SUFFIX,claude.ai,auto
+  - DOMAIN-SUFFIX,platform.claude.ai,auto
+  - DOMAIN-SUFFIX,code.claude.ai,auto
   - DOMAIN-SUFFIX,anthropic.com,auto
+  - DOMAIN-SUFFIX,api.anthropic.com,auto
+
+  # ══════════════════════════════════════════════════════
+  # 🔵 AI 服務（Google AI / Gemini / Vertex / Bard）
+  # ══════════════════════════════════════════════════════
+  - DOMAIN-KEYWORD,google-ai,auto
+  - DOMAIN-KEYWORD,gemini,auto
   - DOMAIN-SUFFIX,aistudio.google.com,auto
+  - DOMAIN-SUFFIX,ai.google.dev,auto
+  - DOMAIN-SUFFIX,makersuite.google.com,auto
+  - DOMAIN-SUFFIX,bard.google.com,auto
   - DOMAIN-SUFFIX,gemini.google.com,auto
+  - DOMAIN-SUFFIX,generativelanguage.googleapis.com,auto
+  - DOMAIN-SUFFIX,vertexai.cloud.google.com,auto
+  - DOMAIN-SUFFIX,aiplatform.googleapis.com,auto
+
+  # ══════════════════════════════════════════════════════
+  # 💙 Microsoft AI（Copilot / Bing Chat）
+  # ══════════════════════════════════════════════════════
+  - DOMAIN-KEYWORD,copilot,auto
+  - DOMAIN-SUFFIX,copilot.microsoft.com,auto
+  - DOMAIN-SUFFIX,bing.com,auto
+  - DOMAIN-SUFFIX,edgeservices.bing.com,auto
+
+  # ══════════════════════════════════════════════════════
+  # 🐍 AI 服務（DeepSeek / Perplexity / Grok）
+  # ══════════════════════════════════════════════════════
   - DOMAIN-SUFFIX,deepseek.com,auto
+  - DOMAIN-SUFFIX,api.deepseek.com,auto
   - DOMAIN-SUFFIX,perplexity.ai,auto
-  # 搜尋引擎 / 影片
+  - DOMAIN-SUFFIX,api.perplexity.ai,auto
+  - DOMAIN-SUFFIX,grok.com,auto
+
+  # ══════════════════════════════════════════════════════
+  # 📺 Google 全家桶（搜尋 / 影片 / 地圖 / 翻譯）
+  # ══════════════════════════════════════════════════════
   - DOMAIN-SUFFIX,google.com,auto
+  - DOMAIN-SUFFIX,google.com.hk,auto
+  - DOMAIN-SUFFIX,googleapis.com,auto
+  - DOMAIN-SUFFIX,googleusercontent.com,auto
+  - DOMAIN-SUFFIX,googlevideo.com,auto
+  - DOMAIN-SUFFIX,ytimg.com,auto
   - DOMAIN-SUFFIX,youtube.com,auto
-  # 社交媒體
+  - DOMAIN-SUFFIX,googlesyndication.com,auto
+  - DOMAIN-SUFFIX,youtu.be,auto
+  - DOMAIN-SUFFIX,maps.googleapis.com,auto
+  - DOMAIN-SUFFIX,translate.googleapis.com,auto
+
+  # ══════════════════════════════════════════════════════
+  # 🐦 社交媒體（X / Twitter / Threads / Instagram）
+  # ══════════════════════════════════════════════════════
   - DOMAIN-SUFFIX,x.com,auto
   - DOMAIN-SUFFIX,twitter.com,auto
-  # 關鍵字
-  - DOMAIN-KEYWORD,chatgpt,auto
-  - DOMAIN-KEYWORD,claude,auto
-  - DOMAIN-KEYWORD,anthropic,auto
-  - DOMAIN-KEYWORD,openai,auto
-  # 廣告 REJECT
+  - DOMAIN-SUFFIX,twimg.com,auto
+  - DOMAIN-SUFFIX,t.co,auto
+  - DOMAIN-SUFFIX,threads.net,auto
+  - DOMAIN-SUFFIX,threads.com,auto
+  - DOMAIN-SUFFIX,instagram.com,auto
+
+  # ══════════════════════════════════════════════════════
+  # 💬 即時通訊（Telegram / Discord / WhatsApp）
+  # ══════════════════════════════════════════════════════
+  - DOMAIN-SUFFIX,telegram.me,auto
+  - DOMAIN-SUFFIX,telegram.org,auto
+  - DOMAIN-SUFFIX,telegram-apps.website,auto
+  - DOMAIN-SUFFIX,discord.com,auto
+  - DOMAIN-SUFFIX,discord.gg,auto
+  - DOMAIN-SUFFIX,discordapp.com,auto
+  - DOMAIN-SUFFIX,discordapp.net,auto
+
+  # ══════════════════════════════════════════════════════
+  # 🎬 影片平台（YouTube / Netflix / Spotify）
+  # ══════════════════════════════════════════════════════
+  - DOMAIN-SUFFIX,youtube.com,auto
+  - DOMAIN-SUFFIX,ytimg.com,auto
+  - DOMAIN-SUFFIX,googlevideo.com,auto
+  - DOMAIN-SUFFIX,yt.be,auto
+  - DOMAIN-SUFFIX,netflix.com,auto
+  - DOMAIN-SUFFIX,nflxvideo.net,auto
+  - DOMAIN-SUFFIX,spotify.com,auto
+  - DOMAIN-SUFFIX,scdn.co,auto
+
+  # ══════════════════════════════════════════════════════
+  # 🛠️ 開發者工具（GitHub / Stack Overflow / NPM）
+  # ══════════════════════════════════════════════════════
+  - DOMAIN-SUFFIX,github.com,auto
+  - DOMAIN-SUFFIX,githubusercontent.com,auto
+  - DOMAIN-SUFFIX,github.io,auto
+  - DOMAIN-SUFFIX,npmjs.com,auto
+  - DOMAIN-SUFFIX,stackoverflow.com,auto
+  - DOMAIN-SUFFIX,stackexchange.com,auto
+
+  # ══════════════════════════════════════════════════════
+  # 📦 雲服務（AWS / GCP / Cloudflare / Vercel）
+  # ══════════════════════════════════════════════════════
+  - DOMAIN-SUFFIX,amazonaws.com,auto
+  - DOMAIN-SUFFIX,cloudfront.net,auto
+  - DOMAIN-SUFFIX,workers.dev,auto
+  - DOMAIN-SUFFIX,vercel.app,auto
+  - DOMAIN-SUFFIX,workers.githubusercontent.com,auto
+
+  # ══════════════════════════════════════════════════════
+  # 🌐 測試 / 出口 IP 檢測
+  # ══════════════════════════════════════════════════════
+  - DOMAIN-SUFFIX,ip.sb,auto
+  - DOMAIN-SUFFIX,ipinfo.io,auto
+  - DOMAIN-SUFFIX,ifconfig.me,auto
+  - DOMAIN-SUFFIX,icanhazip.com,auto
+
+  # ══════════════════════════════════════════════════════
+  # 🛡️ 廣告 / 追蹤 REJECT
+  # ══════════════════════════════════════════════════════
   - DOMAIN-SUFFIX,doubleclick.net,REJECT
   - DOMAIN-SUFFIX,googlesyndication.com,REJECT
+  - DOMAIN-SUFFIX,googleadservices.com,REJECT
+  - DOMAIN-SUFFIX,moatads.com,REJECT
   - DOMAIN-SUFFIX,adnxs.com,REJECT
+  - DOMAIN-SUFFIX,adsrvr.org,REJECT
+  - DOMAIN-SUFFIX,advertising.com,REJECT
   - DOMAIN-SUFFIX,criteo.com,REJECT
+  - DOMAIN-SUFFIX,criteo.net,REJECT
   - DOMAIN-SUFFIX,amazon-adsystem.com,REJECT
+  - DOMAIN-SUFFIX,outbrain.com,REJECT
+  - DOMAIN-SUFFIX,taboola.com,REJECT
+  - DOMAIN-SUFFIX,media.net,REJECT
+  - DOMAIN-SUFFIX,popads.net,REJECT
+  - DOMAIN-SUFFIX,popcash.net,REJECT
+  - DOMAIN-SUFFIX,baidustatic.com,REJECT
+  - DOMAIN-SUFFIX,bdstatic.com,REJECT
   - DOMAIN-SUFFIX,umeng.com,REJECT
-  # 默認
+  - DOMAIN-SUFFIX,umengcloud.com,REJECT
+  - DOMAIN-SUFFIX,appsflyer.com,REJECT
+  - DOMAIN-SUFFIX,adjust.com,REJECT
+  - DOMAIN-SUFFIX,telemetry.microsoft.com,REJECT
+  - DOMAIN-SUFFIX,watson.microsoft.com,REJECT
+  - DOMAIN-SUFFIX,scorecardresearch.com,REJECT
+  - DOMAIN-SUFFIX,demdex.net,REJECT
+
+  # ══════════════════════════════════════════════════════
+  # ⏭️ 最後一條：其餘流量直連（中國 / 內網）
+  # ══════════════════════════════════════════════════════
   - MATCH,DIRECT
