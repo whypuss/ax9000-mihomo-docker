@@ -1,0 +1,114 @@
+# ============================================================
+# mihomo (Clash.Meta) 配置文件模板
+# ============================================================
+# 使用說明：
+#   1. 填入你的真實節點信息（UUID、密碼、服務器地址）
+#   2. 上傳到 AX9000: /mnt/docker_disk/mi_docker/mihomo_config.yaml
+#   3. 重啟 mihomo: docker restart mihomo
+# ============================================================
+
+port: 12346
+socks-port: 12347
+mixed-port: 0
+redir-port: 12348
+allow-lan: true
+mode: rule
+log-level: info
+external-controller: 0.0.0.0:9090
+
+sniffing:
+  enable: true
+  force-domain: []
+  bypass-source: ["127.0.0.0/8", "192.168.0.0/16"]
+
+dns:
+  enable: true
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  nameserver:
+    - 8.8.8.8
+    - 8.8.4.4
+  fallback:
+    - 1.1.1.1
+    - 1.0.0.1
+
+# ===== 節點列表（請填入真實節點信息） =====
+proxies:
+  # VMess 示例
+  # - name: 日本-VMess
+  #   type: vmess
+  #   server: your-server.jp
+  #   port: 443
+  #   uuid: YOUR-VMESS-UUID-HERE
+  #   alterId: 0
+  #   cipher: auto
+  #   network: ws
+  #   tls: true
+  #   ws-opts:
+  #     path: "/"
+  #     headers:
+  #       Host: your-server.jp
+
+  # VLESS 示例
+  # - name: 香港-VLESS
+  #   type: vless
+  #   server: your-server.hk
+  #   port: 443
+  #   uuid: YOUR-VLESS-UUID-HERE
+  #   network: ws
+  #   tls: true
+  #   sni: your-server.hk
+  #   ws-opts:
+  #     path: "/"
+  #     headers:
+  #       Host: your-server.hk
+
+  # Trojan 示例
+  # - name: 美國-Trojan
+  #   type: trojan
+  #   server: your-server.us
+  #   port: 443
+  #   password: YOUR-TROJAN-PASSWORD-HERE
+  #   sni: your-server.us
+
+# ===== 代理組 =====
+proxy-groups:
+  - name: auto
+    type: select
+    proxies:
+      # - 日本-VMess
+      # - 香港-VLESS
+      # - 美國-Trojan
+
+# ===== 分流規則 =====
+rules:
+  # AI 服務
+  - DOMAIN-SUFFIX,chatgpt.com,auto
+  - DOMAIN-SUFFIX,openai.com,auto
+  - DOMAIN-SUFFIX,api.openai.com,auto
+  - DOMAIN-SUFFIX,claude.ai,auto
+  - DOMAIN-SUFFIX,anthropic.com,auto
+  - DOMAIN-SUFFIX,aistudio.google.com,auto
+  - DOMAIN-SUFFIX,gemini.google.com,auto
+  - DOMAIN-SUFFIX,deepseek.com,auto
+  - DOMAIN-SUFFIX,perplexity.ai,auto
+  # 搜尋引擎 / 影片
+  - DOMAIN-SUFFIX,google.com,auto
+  - DOMAIN-SUFFIX,youtube.com,auto
+  # 社交媒體
+  - DOMAIN-SUFFIX,x.com,auto
+  - DOMAIN-SUFFIX,twitter.com,auto
+  # 關鍵字
+  - DOMAIN-KEYWORD,chatgpt,auto
+  - DOMAIN-KEYWORD,claude,auto
+  - DOMAIN-KEYWORD,anthropic,auto
+  - DOMAIN-KEYWORD,openai,auto
+  # 廣告 REJECT
+  - DOMAIN-SUFFIX,doubleclick.net,REJECT
+  - DOMAIN-SUFFIX,googlesyndication.com,REJECT
+  - DOMAIN-SUFFIX,adnxs.com,REJECT
+  - DOMAIN-SUFFIX,criteo.com,REJECT
+  - DOMAIN-SUFFIX,amazon-adsystem.com,REJECT
+  - DOMAIN-SUFFIX,umeng.com,REJECT
+  # 默認
+  - MATCH,DIRECT
