@@ -136,8 +136,8 @@ rules:
   # ══════════════════════════════════════════════════════
   # 🐍 AI 服務（DeepSeek / Perplexity / Grok）
   # ══════════════════════════════════════════════════════
-  - DOMAIN-SUFFIX,deepseek.com,auto
-  - DOMAIN-SUFFIX,api.deepseek.com,auto
+  - DOMAIN-SUFFIX,deepseek.com,DIRECT
+  - DOMAIN-SUFFIX,api.deepseek.com,DIRECT
   - DOMAIN-SUFFIX,perplexity.ai,auto
   - DOMAIN-SUFFIX,api.perplexity.ai,auto
   - DOMAIN-SUFFIX,grok.com,auto
@@ -149,11 +149,9 @@ rules:
   - DOMAIN-SUFFIX,google.com.hk,auto
   - DOMAIN-SUFFIX,googleapis.com,auto
   - DOMAIN-SUFFIX,googleusercontent.com,auto
-  - DOMAIN-SUFFIX,googlevideo.com,auto
-  - DOMAIN-SUFFIX,ytimg.com,auto
-  - DOMAIN-SUFFIX,youtube.com,auto
+  - DOMAIN-SUFFIX,youtube.com,DIRECT
+  - DOMAIN-SUFFIX,youtu.be,DIRECT
   - DOMAIN-SUFFIX,googlesyndication.com,auto
-  - DOMAIN-SUFFIX,youtu.be,auto
   - DOMAIN-SUFFIX,maps.googleapis.com,auto
   - DOMAIN-SUFFIX,translate.googleapis.com,auto
 
@@ -171,9 +169,9 @@ rules:
   # ══════════════════════════════════════════════════════
   # 💬 即時通訊（Telegram / Discord / WhatsApp）
   # ══════════════════════════════════════════════════════
-  - DOMAIN-SUFFIX,telegram.me,auto
-  - DOMAIN-SUFFIX,telegram.org,auto
-  - DOMAIN-SUFFIX,telegram-apps.website,auto
+  - DOMAIN-SUFFIX,telegram.me,DIRECT
+  - DOMAIN-SUFFIX,telegram.org,DIRECT
+  - DOMAIN-SUFFIX,telegram-apps.website,DIRECT
   - DOMAIN-SUFFIX,discord.com,auto
   - DOMAIN-SUFFIX,discord.gg,auto
   - DOMAIN-SUFFIX,discordapp.com,auto
@@ -182,21 +180,21 @@ rules:
   # ══════════════════════════════════════════════════════
   # 🎬 影片平台（YouTube / Netflix / Spotify）
   # ══════════════════════════════════════════════════════
-  - DOMAIN-SUFFIX,youtube.com,auto
-  - DOMAIN-SUFFIX,ytimg.com,auto
-  - DOMAIN-SUFFIX,googlevideo.com,auto
-  - DOMAIN-SUFFIX,yt.be,auto
+  - DOMAIN-SUFFIX,youtube.com,DIRECT
+  - DOMAIN-SUFFIX,ytimg.com,DIRECT
+  - DOMAIN-SUFFIX,googlevideo.com,DIRECT
+  - DOMAIN-SUFFIX,yt.be,DIRECT
   - DOMAIN-SUFFIX,netflix.com,auto
-  - DOMAIN-SUFFIX,nflxvideo.net,auto
+  - DOMAIN-SUFFIX,nflxvideo.net,DIRECT
   - DOMAIN-SUFFIX,spotify.com,auto
   - DOMAIN-SUFFIX,scdn.co,auto
 
   # ══════════════════════════════════════════════════════
   # 🛠️ 開發者工具（GitHub / Stack Overflow / NPM）
   # ══════════════════════════════════════════════════════
-  - DOMAIN-SUFFIX,github.com,auto
-  - DOMAIN-SUFFIX,githubusercontent.com,auto
-  - DOMAIN-SUFFIX,github.io,auto
+  - DOMAIN-SUFFIX,github.com,DIRECT
+  - DOMAIN-SUFFIX,githubusercontent.com,DIRECT
+  - DOMAIN-SUFFIX,github.io,DIRECT
   - DOMAIN-SUFFIX,npmjs.com,auto
   - DOMAIN-SUFFIX,stackoverflow.com,auto
   - DOMAIN-SUFFIX,stackexchange.com,auto
@@ -204,11 +202,11 @@ rules:
   # ══════════════════════════════════════════════════════
   # 📦 雲服務（AWS / GCP / Cloudflare / Vercel）
   # ══════════════════════════════════════════════════════
-  - DOMAIN-SUFFIX,amazonaws.com,auto
-  - DOMAIN-SUFFIX,cloudfront.net,auto
-  - DOMAIN-SUFFIX,workers.dev,auto
+  - DOMAIN-SUFFIX,amazonaws.com,DIRECT
+  - DOMAIN-SUFFIX,cloudfront.net,DIRECT
+  - DOMAIN-SUFFIX,workers.dev,DIRECT
   - DOMAIN-SUFFIX,vercel.app,auto
-  - DOMAIN-SUFFIX,workers.githubusercontent.com,auto
+  - DOMAIN-SUFFIX,workers.githubusercontent.com,DIRECT
 
   # ══════════════════════════════════════════════════════
   # 🌐 測試 / 出口 IP 檢測

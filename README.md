@@ -189,19 +189,22 @@ rules:
   - DOMAIN-SUFFIX,bing.com,auto
 
   # 🐍 DeepSeek / Perplexity / Grok
-  - DOMAIN-SUFFIX,deepseek.com,auto
-  - DOMAIN-SUFFIX,api.deepseek.com,auto
+  - DOMAIN-SUFFIX,deepseek.com,DIRECT
+  - DOMAIN-SUFFIX,api.deepseek.com,DIRECT
   - DOMAIN-SUFFIX,perplexity.ai,auto
   - DOMAIN-SUFFIX,grok.com,auto
+
+  # 📺 YouTube（DIRECT 直連）
+  - DOMAIN-SUFFIX,youtube.com,DIRECT
+  - DOMAIN-SUFFIX,youtu.be,DIRECT
+  - DOMAIN-SUFFIX,ytimg.com,DIRECT
+  - DOMAIN-SUFFIX,googlevideo.com,DIRECT
+  - DOMAIN-SUFFIX,nflxvideo.net,DIRECT
 
   # 📺 Google 全家桶 / YouTube
   - DOMAIN-SUFFIX,google.com,auto
   - DOMAIN-SUFFIX,googleapis.com,auto
   - DOMAIN-SUFFIX,googleusercontent.com,auto
-  - DOMAIN-SUFFIX,googlevideo.com,auto
-  - DOMAIN-SUFFIX,ytimg.com,auto
-  - DOMAIN-SUFFIX,youtube.com,auto
-  - DOMAIN-SUFFIX,youtu.be,auto
 
   # 🐦 X / Twitter / Threads / Instagram
   - DOMAIN-SUFFIX,x.com,auto
@@ -210,16 +213,22 @@ rules:
   - DOMAIN-SUFFIX,threads.net,auto
   - DOMAIN-SUFFIX,instagram.com,auto
 
-  # 💬 Telegram / Discord
-  - DOMAIN-SUFFIX,telegram.me,auto
-  - DOMAIN-SUFFIX,telegram.org,auto
+  # 💬 Telegram（DIRECT 直連）
+  - DOMAIN-SUFFIX,telegram.me,DIRECT
+  - DOMAIN-SUFFIX,telegram.org,DIRECT
   - DOMAIN-SUFFIX,discord.com,auto
   - DOMAIN-SUFFIX,discordapp.net,auto
 
-  # 🛠️ GitHub / NPM
-  - DOMAIN-SUFFIX,github.com,auto
-  - DOMAIN-SUFFIX,githubusercontent.com,auto
+  # 🛠️ GitHub / NPM（GitHub DIRECT）
+  - DOMAIN-SUFFIX,github.com,DIRECT
+  - DOMAIN-SUFFIX,githubusercontent.com,DIRECT
   - DOMAIN-SUFFIX,npmjs.com,auto
+
+  # 📦 AWS / Cloudflare（DIRECT 直連）
+  - DOMAIN-SUFFIX,amazonaws.com,DIRECT
+  - DOMAIN-SUFFIX,cloudfront.net,DIRECT
+  - DOMAIN-SUFFIX,workers.dev,DIRECT
+  - DOMAIN-SUFFIX,workers.githubusercontent.com,DIRECT
 
   # 🌐 出口 IP 檢測
   - DOMAIN-SUFFIX,ip.sb,auto
