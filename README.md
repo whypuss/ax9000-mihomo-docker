@@ -125,3 +125,12 @@ exit 0
    curl -I https://claude.ai/
    ```
    *此時應完美返回 **HTTP 200 / 301 / 302**！403 在此不攻自破！*
+
+## 故障排查：電視盒子/Android TV 代理失效處理
+如果發現設備流量未走代理，請按以下順序排查：
+1. **檢查 DNS**: 確保設備 DNS 指向路由 IP (`192.168.31.1`)。若無法修改，請啟用路由器 DNS 劫持：
+   `iptables -t nat -I PREROUTING 1 -s <IP> -p udp --dport 53 -j REDIRECT --to-ports 1053`
+2. **TCP/UDP 強制攔截**: 若設備協議兼容性差（如 QUIC），執行強制重定向：
+   `iptables -t nat -I PREROUTING 1 -s <IP> -p tcp -j REDIRECT --to-ports 12348`
+   `iptables -t nat -I PREROUTING 1 -s <IP> -p udp -j REDIRECT --to-ports 12348`
+3. **進程狀態確認**: 使用 `netstat -tulnp | grep mihomo` 確認 `12348` 端口是否正常監聽。
