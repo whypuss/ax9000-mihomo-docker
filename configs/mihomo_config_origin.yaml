@@ -1,0 +1,1016 @@
+port: 12346
+socks-port: 12347
+mixed-port: 0
+redir-port: 12348
+allow-lan: true
+bind-address: 0.0.0.0
+mode: rule
+inet4-address: 0.0.0.0
+log-level: info
+external-controller: 0.0.0.0:9999
+sniffing:
+  enable: true
+  force-domain: []
+  bypass-source: ["127.0.0.0/8"]
+dns:
+  enable: true
+  listen: 0.0.0.0:1053
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  fake-ip-filter:
+#    - '+*.chatgpt.com'
+#    - '+*.openai.com'
+#    - '+*.anthropic.com'
+#    - '+*.claude.ai'
+#    - '+*.api.openai.com'
+#    - '+*.deepseek.com'
+#    - '+*.api.deepseek.com'
+#    - '+*.moonshot.cn'
+    - '+*.github.com'
+    - '+*.githubusercontent.com'
+    - '+*.slack.com'
+    - '+*.discord.com'
+    - '+*.telegram.org'
+    - '+*.telegram.me'
+    - '+*.telegram.dog'
+    - '+*.telesco.pe'
+    - '+*.youtube.com'
+    - '+*.youtu.be'
+    - '+*.googlevideo.com'
+    - '+*.ytimg.com'
+    - '+*.googleapis.com'
+    - '+*.googleusercontent.com'
+    - '+*.amazonaws.com'
+    - '+*.cloudfront.net'
+    - '+*.workers.dev'
+    - '+*.notion.so'
+    - '+*.figma.com'
+    - '+*.spotify.com'
+    - '+*.reddit.com'
+    - '+*.x.com'
+    - '+*.twimg.com'
+    - '+*.bilibili.com'
+    - '+*.hdslb.com'
+    - '+*.perplexity.ai'
+    - '+*.mistral.ai'
+    - '+*.cohere.ai'
+    - '+*.replicate.com'
+    - '+*.huggingface.co'
+    # ======= CHINA BYPASS FOR GAMES & APPS =======
+    - '+*.qq.com'
+    - '+*.tencent.com'
+    - '+*.wechat.com'
+    - '+*.tenpay.com'
+    - '+*.gtimg.com'
+    - '+*.qlogo.cn'
+    - '+*.qpic.cn'
+    - '+*.weixin.qq.com'
+    - '+*.weixin.com'
+    - '+*.taobao.com'
+    - '+*.alibaba.com'
+    - '+*.alicdn.com'
+    - '+*.aliyun.com'
+    - '+*.alipay.com'
+    - '+*.alipayobjects.com'
+    - '+*.tmall.com'
+    - '+*.bytedance.com'
+    - '+*.douyin.com'
+    - '+*.pstatp.com'
+    - '+*.amap.com'
+    - '+*.baidu.com'
+    - '+*.bdstatic.com'
+    - '+*.netease.com'
+    - '+*.163.com'
+    - '+*.126.net'
+    - '+*.jd.com'
+    - '+*.360buyimg.com'
+    - '+*.meituan.com'
+    - '+*.dpfile.com'
+    - '+*.xiaomicp.com'
+    - '+*.mi.com'
+  nameserver:
+    - 8.8.8.8
+    - 8.8.4.4
+  fallback:
+    - 1.1.1.1
+    - 1.0.0.1
+
+proxies:
+- name: hl13893j
+  type: vless
+  server: jp.xlin.eu.cc
+  port: 443
+  uuid: 9158ed39-7953-492f-80b7-531c5fa3ceeb
+  flow: ''
+  network: ws
+  tls: true
+  sni: jp.xlin.eu.cc
+  client-fingerprint: chrome
+  ws-opts:
+    path: "/"
+    headers:
+      Host: jp.xlin.eu.cc
+- name: cloudflare.182682.xyz-443
+  type: vless
+  server: cloudflare.182682.xyz
+  port: 443
+  uuid: bf25a7b8-1f52-4be9-93f5-623a878b37e9
+  flow: ''
+  network: ws
+  tls: true
+  sni: cfnew.agooxo.workers.dev
+  ws-opts:
+    path: "/"
+    headers:
+      Host: cfnew.agooxo.workers.dev
+- name: speed.marisalnc.com-443
+  type: vless
+  server: speed.marisalnc.com
+  port: 443
+  uuid: bf25a7b8-1f52-4be9-93f5-623a878b37e9
+  flow: ''
+  network: ws
+  tls: true
+  sni: cfnew.agooxo.workers.dev
+  ws-opts:
+    path: "/"
+    headers:
+      Host: cfnew.agooxo.workers.dev
+- name: freeyx.cloudflare88.eu.org-443
+  type: vless
+  server: freeyx.cloudflare88.eu.org
+  port: 443
+  uuid: bf25a7b8-1f52-4be9-93f5-623a878b37e9
+  flow: ''
+  network: ws
+  tls: true
+  sni: cfnew.agooxo.workers.dev
+  ws-opts:
+    path: "/"
+    headers:
+      Host: cfnew.agooxo.workers.dev
+- name: bestcf.top-443
+  type: vless
+  server: bestcf.top
+  port: 443
+  uuid: bf25a7b8-1f52-4be9-93f5-623a878b37e9
+  flow: ''
+  network: ws
+  tls: true
+  sni: cfnew.agooxo.workers.dev
+  ws-opts:
+    path: "/"
+    headers:
+      Host: cfnew.agooxo.workers.dev
+- name: cdn.2020111.xyz-443
+  type: vless
+  server: cdn.2020111.xyz
+  port: 443
+  uuid: bf25a7b8-1f52-4be9-93f5-623a878b37e9
+  flow: ''
+  network: ws
+  tls: true
+  sni: cfnew.agooxo.workers.dev
+  ws-opts:
+    path: "/"
+    headers:
+      Host: cfnew.agooxo.workers.dev
+- name: cfip.cfcdn.vip-443
+  type: vless
+  server: cfip.cfcdn.vip
+  port: 443
+  uuid: bf25a7b8-1f52-4be9-93f5-623a878b37e9
+  flow: ''
+  network: ws
+  tls: true
+  sni: cfnew.agooxo.workers.dev
+  ws-opts:
+    path: "/"
+    headers:
+      Host: cfnew.agooxo.workers.dev
+- name: cf.0sm.com-443
+  type: vless
+  server: cf.0sm.com
+  port: 443
+  uuid: bf25a7b8-1f52-4be9-93f5-623a878b37e9
+  flow: ''
+  network: ws
+  tls: true
+  sni: cfnew.agooxo.workers.dev
+  ws-opts:
+    path: "/"
+    headers:
+      Host: cfnew.agooxo.workers.dev
+- name: cf.090227.xyz-443
+  type: vless
+  server: cf.090227.xyz
+  port: 443
+  uuid: bf25a7b8-1f52-4be9-93f5-623a878b37e9
+  flow: ''
+  network: ws
+  tls: true
+  sni: cfnew.agooxo.workers.dev
+  ws-opts:
+    path: "/"
+    headers:
+      Host: cfnew.agooxo.workers.dev
+- name: cf.zhetengsha.eu.org-443
+  type: vless
+  server: cf.zhetengsha.eu.org
+  port: 443
+  uuid: bf25a7b8-1f52-4be9-93f5-623a878b37e9
+  flow: ''
+  network: ws
+  tls: true
+  sni: cfnew.agooxo.workers.dev
+  ws-opts:
+    path: "/"
+    headers:
+      Host: cfnew.agooxo.workers.dev
+- name: cloudflare.9jy.cc-443
+  type: vless
+  server: cloudflare.9jy.cc
+  port: 443
+  uuid: bf25a7b8-1f52-4be9-93f5-623a878b37e9
+  flow: ''
+  network: ws
+  tls: true
+  sni: cfnew.agooxo.workers.dev
+  ws-opts:
+    path: "/"
+    headers:
+      Host: cfnew.agooxo.workers.dev
+- name: cf.zerone-cdn.pp.ua-443
+  type: vless
+  server: cf.zerone-cdn.pp.ua
+  port: 443
+  uuid: bf25a7b8-1f52-4be9-93f5-623a878b37e9
+  flow: ''
+  network: ws
+  tls: true
+  sni: cfnew.agooxo.workers.dev
+  ws-opts:
+    path: "/"
+    headers:
+      Host: cfnew.agooxo.workers.dev
+- name: cfip.1323123.xyz-443
+  type: vless
+  server: cfip.1323123.xyz
+  port: 443
+  uuid: bf25a7b8-1f52-4be9-93f5-623a878b37e9
+  flow: ''
+  network: ws
+  tls: true
+  sni: cfnew.agooxo.workers.dev
+  ws-opts:
+    path: "/"
+    headers:
+      Host: cfnew.agooxo.workers.dev
+- name: cnamefuckxxs.yuchen.icu-443
+  type: vless
+  server: cnamefuckxxs.yuchen.icu
+  port: 443
+  uuid: bf25a7b8-1f52-4be9-93f5-623a878b37e9
+  flow: ''
+  network: ws
+  tls: true
+  sni: cfnew.agooxo.workers.dev
+  ws-opts:
+    path: "/"
+    headers:
+      Host: cfnew.agooxo.workers.dev
+- name: cloudflare-ip.mofashi.ltd-443
+  type: vless
+  server: cloudflare-ip.mofashi.ltd
+  port: 443
+  uuid: bf25a7b8-1f52-4be9-93f5-623a878b37e9
+  flow: ''
+  network: ws
+  tls: true
+  sni: cfnew.agooxo.workers.dev
+  ws-opts:
+    path: "/"
+    headers:
+      Host: cfnew.agooxo.workers.dev
+- name: 115155.xyz-443
+  type: vless
+  server: 115155.xyz
+  port: 443
+  uuid: bf25a7b8-1f52-4be9-93f5-623a878b37e9
+  flow: ''
+  network: ws
+  tls: true
+  sni: cfnew.agooxo.workers.dev
+  ws-opts:
+    path: "/"
+    headers:
+      Host: cfnew.agooxo.workers.dev
+- name: cname.xirancdn.us-443
+  type: vless
+  server: cname.xirancdn.us
+  port: 443
+  uuid: bf25a7b8-1f52-4be9-93f5-623a878b37e9
+  flow: ''
+  network: ws
+  tls: true
+  sni: cfnew.agooxo.workers.dev
+  ws-opts:
+    path: "/"
+    headers:
+      Host: cfnew.agooxo.workers.dev
+- name: f3058171cad.002404.xyz-443
+  type: vless
+  server: f3058171cad.002404.xyz
+  port: 443
+  uuid: bf25a7b8-1f52-4be9-93f5-623a878b37e9
+  flow: ''
+  network: ws
+  tls: true
+  sni: cfnew.agooxo.workers.dev
+  ws-opts:
+    path: "/"
+    headers:
+      Host: cfnew.agooxo.workers.dev
+- name: 8.889288.xyz-443
+  type: vless
+  server: 8.889288.xyz
+  port: 443
+  uuid: bf25a7b8-1f52-4be9-93f5-623a878b37e9
+  flow: ''
+  network: ws
+  tls: true
+  sni: cfnew.agooxo.workers.dev
+  ws-opts:
+    path: "/"
+    headers:
+      Host: cfnew.agooxo.workers.dev
+- name: cdn.tzpro.xyz-443
+  type: vless
+  server: cdn.tzpro.xyz
+  port: 443
+  uuid: bf25a7b8-1f52-4be9-93f5-623a878b37e9
+  flow: ''
+  network: ws
+  tls: true
+  sni: cfnew.agooxo.workers.dev
+  ws-opts:
+    path: "/"
+    headers:
+      Host: cfnew.agooxo.workers.dev
+- name: cf.877771.xyz-443
+  type: vless
+  server: cf.877771.xyz
+  port: 443
+  uuid: bf25a7b8-1f52-4be9-93f5-623a878b37e9
+  flow: ''
+  network: ws
+  tls: true
+  sni: cfnew.agooxo.workers.dev
+  ws-opts:
+    path: "/"
+    headers:
+      Host: cfnew.agooxo.workers.dev
+- name: xn--b6gac.eu.org-443
+  type: vless
+  server: xn--b6gac.eu.org
+  port: 443
+  uuid: bf25a7b8-1f52-4be9-93f5-623a878b37e9
+  flow: ''
+  network: ws
+  tls: true
+  sni: cfnew.agooxo.workers.dev
+  ws-opts:
+    path: "/"
+    headers:
+      Host: cfnew.agooxo.workers.dev
+- name: cloudflare.182682.xyz-443-2
+  type: trojan
+  server: cloudflare.182682.xyz
+  port: 443
+  password: bf25a7b8-1f52-4be9-93f5-623a878b37e9
+  tls: true
+  sni: cfnew.agooxo.workers.dev
+  alpn:
+    - h3
+- name: speed.marisalnc.com-443-2
+  type: trojan
+  server: speed.marisalnc.com
+  port: 443
+  password: bf25a7b8-1f52-4be9-93f5-623a878b37e9
+  tls: true
+  sni: cfnew.agooxo.workers.dev
+  alpn:
+    - h3
+- name: freeyx.cloudflare88.eu.org-443-2
+  type: trojan
+  server: freeyx.cloudflare88.eu.org
+  port: 443
+  password: bf25a7b8-1f52-4be9-93f5-623a878b37e9
+  tls: true
+  sni: cfnew.agooxo.workers.dev
+  alpn:
+    - h3
+- name: bestcf.top-443-2
+  type: trojan
+  server: bestcf.top
+  port: 443
+  password: bf25a7b8-1f52-4be9-93f5-623a878b37e9
+  tls: true
+  sni: cfnew.agooxo.workers.dev
+  alpn:
+    - h3
+- name: cdn.2020111.xyz-443-2
+  type: trojan
+  server: cdn.2020111.xyz
+  port: 443
+  password: bf25a7b8-1f52-4be9-93f5-623a878b37e9
+  tls: true
+  sni: cfnew.agooxo.workers.dev
+  alpn:
+    - h3
+- name: cfip.cfcdn.vip-443-2
+  type: trojan
+  server: cfip.cfcdn.vip
+  port: 443
+  password: bf25a7b8-1f52-4be9-93f5-623a878b37e9
+  tls: true
+  sni: cfnew.agooxo.workers.dev
+  alpn:
+    - h3
+- name: cf.0sm.com-443-2
+  type: trojan
+  server: cf.0sm.com
+  port: 443
+  password: bf25a7b8-1f52-4be9-93f5-623a878b37e9
+  tls: true
+  sni: cfnew.agooxo.workers.dev
+  alpn:
+    - h3
+- name: cf.090227.xyz-443-2
+  type: trojan
+  server: cf.090227.xyz
+  port: 443
+  password: bf25a7b8-1f52-4be9-93f5-623a878b37e9
+  tls: true
+  sni: cfnew.agooxo.workers.dev
+  alpn:
+    - h3
+- name: cf.zhetengsha.eu.org-443-2
+  type: trojan
+  server: cf.zhetengsha.eu.org
+  port: 443
+  password: bf25a7b8-1f52-4be9-93f5-623a878b37e9
+  tls: true
+  sni: cfnew.agooxo.workers.dev
+  alpn:
+    - h3
+- name: cloudflare.9jy.cc-443-2
+  type: trojan
+  server: cloudflare.9jy.cc
+  port: 443
+  password: bf25a7b8-1f52-4be9-93f5-623a878b37e9
+  tls: true
+  sni: cfnew.agooxo.workers.dev
+  alpn:
+    - h3
+- name: cf.zerone-cdn.pp.ua-443-2
+  type: trojan
+  server: cf.zerone-cdn.pp.ua
+  port: 443
+  password: bf25a7b8-1f52-4be9-93f5-623a878b37e9
+  tls: true
+  sni: cfnew.agooxo.workers.dev
+  alpn:
+    - h3
+- name: cfip.1323123.xyz-443-2
+  type: trojan
+  server: cfip.1323123.xyz
+  port: 443
+  password: bf25a7b8-1f52-4be9-93f5-623a878b37e9
+  tls: true
+  sni: cfnew.agooxo.workers.dev
+  alpn:
+    - h3
+- name: cnamefuckxxs.yuchen.icu-443-2
+  type: trojan
+  server: cnamefuckxxs.yuchen.icu
+  port: 443
+  password: bf25a7b8-1f52-4be9-93f5-623a878b37e9
+  tls: true
+  sni: cfnew.agooxo.workers.dev
+  alpn:
+    - h3
+- name: cloudflare-ip.mofashi.ltd-443-2
+  type: trojan
+  server: cloudflare-ip.mofashi.ltd
+  port: 443
+  password: bf25a7b8-1f52-4be9-93f5-623a878b37e9
+  tls: true
+  sni: cfnew.agooxo.workers.dev
+  alpn:
+    - h3
+- name: 115155.xyz-443-2
+  type: trojan
+  server: 115155.xyz
+  port: 443
+  password: bf25a7b8-1f52-4be9-93f5-623a878b37e9
+  tls: true
+  sni: cfnew.agooxo.workers.dev
+  alpn:
+    - h3
+- name: cname.xirancdn.us-443-2
+  type: trojan
+  server: cname.xirancdn.us
+  port: 443
+  password: bf25a7b8-1f52-4be9-93f5-623a878b37e9
+  tls: true
+  sni: cfnew.agooxo.workers.dev
+  alpn:
+    - h3
+- name: f3058171cad.002404.xyz-443-2
+  type: trojan
+  server: f3058171cad.002404.xyz
+  port: 443
+  password: bf25a7b8-1f52-4be9-93f5-623a878b37e9
+  tls: true
+  sni: cfnew.agooxo.workers.dev
+  alpn:
+    - h3
+- name: 8.889288.xyz-443-2
+  type: trojan
+  server: 8.889288.xyz
+  port: 443
+  password: bf25a7b8-1f52-4be9-93f5-623a878b37e9
+  tls: true
+  sni: cfnew.agooxo.workers.dev
+  alpn:
+    - h3
+- name: cdn.tzpro.xyz-443-2
+  type: trojan
+  server: cdn.tzpro.xyz
+  port: 443
+  password: bf25a7b8-1f52-4be9-93f5-623a878b37e9
+  tls: true
+  sni: cfnew.agooxo.workers.dev
+  alpn:
+    - h3
+- name: cf.877771.xyz-443-2
+  type: trojan
+  server: cf.877771.xyz
+  port: 443
+  password: bf25a7b8-1f52-4be9-93f5-623a878b37e9
+  tls: true
+  sni: cfnew.agooxo.workers.dev
+  alpn:
+    - h3
+- name: xn--b6gac.eu.org-443-2
+  type: trojan
+  server: xn--b6gac.eu.org
+  port: 443
+  password: bf25a7b8-1f52-4be9-93f5-623a878b37e9
+  tls: true
+  sni: cfnew.agooxo.workers.dev
+  alpn:
+    - h3
+- name: cloudflare.182682.xyz-443-3
+  type: vless
+  server: cloudflare.182682.xyz
+  port: 443
+  uuid: bf25a7b8-1f52-4be9-93f5-623a878b37e9
+  flow: ''
+  network: ws
+  tls: true
+  sni: cfnew.agooxo.workers.dev
+  alpn:
+    - h3%2Ch2
+  ws-opts:
+    path: '%2Fbf25a7b8'
+    headers:
+      Host: cfnew.agooxo.workers.dev
+- name: speed.marisalnc.com-443-3
+  type: vless
+  server: speed.marisalnc.com
+  port: 443
+  uuid: bf25a7b8-1f52-4be9-93f5-623a878b37e9
+  flow: ''
+  network: ws
+  tls: true
+  sni: cfnew.agooxo.workers.dev
+  alpn:
+    - h3%2Ch2
+  ws-opts:
+    path: '%2Fbf25a7b8'
+    headers:
+      Host: cfnew.agooxo.workers.dev
+- name: freeyx.cloudflare88.eu.org-443-3
+  type: vless
+  server: freeyx.cloudflare88.eu.org
+  port: 443
+  uuid: bf25a7b8-1f52-4be9-93f5-623a878b37e9
+  flow: ''
+  network: ws
+  tls: true
+  sni: cfnew.agooxo.workers.dev
+  alpn:
+    - h3%2Ch2
+  ws-opts:
+    path: '%2Fbf25a7b8'
+    headers:
+      Host: cfnew.agooxo.workers.dev
+- name: bestcf.top-443-3
+  type: vless
+  server: bestcf.top
+  port: 443
+  uuid: bf25a7b8-1f52-4be9-93f5-623a878b37e9
+  flow: ''
+  network: ws
+  tls: true
+  sni: cfnew.agooxo.workers.dev
+  alpn:
+    - h3%2Ch2
+  ws-opts:
+    path: '%2Fbf25a7b8'
+    headers:
+      Host: cfnew.agooxo.workers.dev
+- name: cdn.2020111.xyz-443-3
+  type: vless
+  server: cdn.2020111.xyz
+  port: 443
+  uuid: bf25a7b8-1f52-4be9-93f5-623a878b37e9
+  flow: ''
+  network: ws
+  tls: true
+  sni: cfnew.agooxo.workers.dev
+  alpn:
+    - h3%2Ch2
+  ws-opts:
+    path: '%2Fbf25a7b8'
+    headers:
+      Host: cfnew.agooxo.workers.dev
+- name: cfip.cfcdn.vip-443-3
+  type: vless
+  server: cfip.cfcdn.vip
+  port: 443
+  uuid: bf25a7b8-1f52-4be9-93f5-623a878b37e9
+  flow: ''
+  network: ws
+  tls: true
+  sni: cfnew.agooxo.workers.dev
+  alpn:
+    - h3%2Ch2
+  ws-opts:
+    path: '%2Fbf25a7b8'
+    headers:
+      Host: cfnew.agooxo.workers.dev
+- name: cf.0sm.com-443-3
+  type: vless
+  server: cf.0sm.com
+  port: 443
+  uuid: bf25a7b8-1f52-4be9-93f5-623a878b37e9
+  flow: ''
+  network: ws
+  tls: true
+  sni: cfnew.agooxo.workers.dev
+  alpn:
+    - h3%2Ch2
+  ws-opts:
+    path: '%2Fbf25a7b8'
+    headers:
+      Host: cfnew.agooxo.workers.dev
+- name: cf.090227.xyz-443-3
+  type: vless
+  server: cf.090227.xyz
+  port: 443
+  uuid: bf25a7b8-1f52-4be9-93f5-623a878b37e9
+  flow: ''
+  network: ws
+  tls: true
+  sni: cfnew.agooxo.workers.dev
+  alpn:
+    - h3%2Ch2
+  ws-opts:
+    path: '%2Fbf25a7b8'
+    headers:
+      Host: cfnew.agooxo.workers.dev
+- name: cf.zhetengsha.eu.org-443-3
+  type: vless
+  server: cf.zhetengsha.eu.org
+  port: 443
+  uuid: bf25a7b8-1f52-4be9-93f5-623a878b37e9
+  flow: ''
+  network: ws
+  tls: true
+  sni: cfnew.agooxo.workers.dev
+  alpn:
+    - h3%2Ch2
+  ws-opts:
+    path: '%2Fbf25a7b8'
+    headers:
+      Host: cfnew.agooxo.workers.dev
+- name: cloudflare.9jy.cc-443-3
+  type: vless
+  server: cloudflare.9jy.cc
+  port: 443
+  uuid: bf25a7b8-1f52-4be9-93f5-623a878b37e9
+  flow: ''
+  network: ws
+  tls: true
+  sni: cfnew.agooxo.workers.dev
+  alpn:
+    - h3%2Ch2
+  ws-opts:
+    path: '%2Fbf25a7b8'
+    headers:
+      Host: cfnew.agooxo.workers.dev
+- name: cf.zerone-cdn.pp.ua-443-3
+  type: vless
+  server: cf.zerone-cdn.pp.ua
+  port: 443
+  uuid: bf25a7b8-1f52-4be9-93f5-623a878b37e9
+  flow: ''
+  network: ws
+  tls: true
+  sni: cfnew.agooxo.workers.dev
+  alpn:
+    - h3%2Ch2
+  ws-opts:
+    path: '%2Fbf25a7b8'
+    headers:
+      Host: cfnew.agooxo.workers.dev
+- name: cfip.1323123.xyz-443-3
+  type: vless
+  server: cfip.1323123.xyz
+  port: 443
+  uuid: bf25a7b8-1f52-4be9-93f5-623a878b37e9
+  flow: ''
+  network: ws
+  tls: true
+  sni: cfnew.agooxo.workers.dev
+  alpn:
+    - h3%2Ch2
+  ws-opts:
+    path: '%2Fbf25a7b8'
+    headers:
+      Host: cfnew.agooxo.workers.dev
+- name: cnamefuckxxs.yuchen.icu-443-3
+  type: vless
+  server: cnamefuckxxs.yuchen.icu
+  port: 443
+  uuid: bf25a7b8-1f52-4be9-93f5-623a878b37e9
+  flow: ''
+  network: ws
+  tls: true
+  sni: cfnew.agooxo.workers.dev
+  alpn:
+    - h3%2Ch2
+  ws-opts:
+    path: '%2Fbf25a7b8'
+    headers:
+      Host: cfnew.agooxo.workers.dev
+- name: cloudflare-ip.mofashi.ltd-443-3
+  type: vless
+  server: cloudflare-ip.mofashi.ltd
+  port: 443
+  uuid: bf25a7b8-1f52-4be9-93f5-623a878b37e9
+  flow: ''
+  network: ws
+  tls: true
+  sni: cfnew.agooxo.workers.dev
+  alpn:
+    - h3%2Ch2
+  ws-opts:
+    path: '%2Fbf25a7b8'
+    headers:
+      Host: cfnew.agooxo.workers.dev
+- name: 115155.xyz-443-3
+  type: vless
+  server: 115155.xyz
+  port: 443
+  uuid: bf25a7b8-1f52-4be9-93f5-623a878b37e9
+  flow: ''
+  network: ws
+  tls: true
+  sni: cfnew.agooxo.workers.dev
+  alpn:
+    - h3%2Ch2
+  ws-opts:
+    path: '%2Fbf25a7b8'
+    headers:
+      Host: cfnew.agooxo.workers.dev
+- name: cname.xirancdn.us-443-3
+  type: vless
+  server: cname.xirancdn.us
+  port: 443
+  uuid: bf25a7b8-1f52-4be9-93f5-623a878b37e9
+  flow: ''
+  network: ws
+  tls: true
+  sni: cfnew.agooxo.workers.dev
+  alpn:
+    - h3%2Ch2
+  ws-opts:
+    path: '%2Fbf25a7b8'
+    headers:
+      Host: cfnew.agooxo.workers.dev
+- name: f3058171cad.002404.xyz-443-3
+  type: vless
+  server: f3058171cad.002404.xyz
+  port: 443
+  uuid: bf25a7b8-1f52-4be9-93f5-623a878b37e9
+  flow: ''
+  network: ws
+  tls: true
+  sni: cfnew.agooxo.workers.dev
+  alpn:
+    - h3%2Ch2
+  ws-opts:
+    path: '%2Fbf25a7b8'
+    headers:
+      Host: cfnew.agooxo.workers.dev
+- name: 8.889288.xyz-443-3
+  type: vless
+  server: 8.889288.xyz
+  port: 443
+  uuid: bf25a7b8-1f52-4be9-93f5-623a878b37e9
+  flow: ''
+  network: ws
+  tls: true
+  sni: cfnew.agooxo.workers.dev
+  alpn:
+    - h3%2Ch2
+  ws-opts:
+    path: '%2Fbf25a7b8'
+    headers:
+      Host: cfnew.agooxo.workers.dev
+- name: cdn.tzpro.xyz-443-3
+  type: vless
+  server: cdn.tzpro.xyz
+  port: 443
+  uuid: bf25a7b8-1f52-4be9-93f5-623a878b37e9
+  flow: ''
+  network: ws
+  tls: true
+  sni: cfnew.agooxo.workers.dev
+  alpn:
+    - h3%2Ch2
+  ws-opts:
+    path: '%2Fbf25a7b8'
+    headers:
+      Host: cfnew.agooxo.workers.dev
+- name: cf.877771.xyz-443-3
+  type: vless
+  server: cf.877771.xyz
+  port: 443
+  uuid: bf25a7b8-1f52-4be9-93f5-623a878b37e9
+  flow: ''
+  network: ws
+  tls: true
+  sni: cfnew.agooxo.workers.dev
+  alpn:
+    - h3%2Ch2
+  ws-opts:
+    path: '%2Fbf25a7b8'
+    headers:
+      Host: cfnew.agooxo.workers.dev
+- name: xn--b6gac.eu.org-443-3
+  type: vless
+  server: xn--b6gac.eu.org
+  port: 443
+  uuid: bf25a7b8-1f52-4be9-93f5-623a878b37e9
+  flow: ''
+  network: ws
+  tls: true
+  sni: cfnew.agooxo.workers.dev
+  alpn:
+    - h3%2Ch2
+  ws-opts:
+    path: '%2Fbf25a7b8'
+    headers:
+      Host: cfnew.agooxo.workers.dev
+
+proxy-groups:
+- name: auto
+  type: select
+  proxies:
+      - hl13893j
+      - cloudflare.182682.xyz-443
+      - speed.marisalnc.com-443
+      - freeyx.cloudflare88.eu.org-443
+      - bestcf.top-443
+      - cdn.2020111.xyz-443
+      - cfip.cfcdn.vip-443
+      - cf.0sm.com-443
+      - cf.090227.xyz-443
+      - cf.zhetengsha.eu.org-443
+      - cloudflare.9jy.cc-443
+      - cf.zerone-cdn.pp.ua-443
+      - cfip.1323123.xyz-443
+      - cnamefuckxxs.yuchen.icu-443
+      - cloudflare-ip.mofashi.ltd-443
+      - 115155.xyz-443
+      - cname.xirancdn.us-443
+      - f3058171cad.002404.xyz-443
+      - 8.889288.xyz-443
+      - cdn.tzpro.xyz-443
+      - cf.877771.xyz-443
+      - xn--b6gac.eu.org-443
+      - cloudflare.182682.xyz-443-2
+      - speed.marisalnc.com-443-2
+      - freeyx.cloudflare88.eu.org-443-2
+      - bestcf.top-443-2
+      - cdn.2020111.xyz-443-2
+      - cfip.cfcdn.vip-443-2
+      - cf.0sm.com-443-2
+      - cf.090227.xyz-443-2
+      - cf.zhetengsha.eu.org-443-2
+      - cloudflare.9jy.cc-443-2
+      - cf.zerone-cdn.pp.ua-443-2
+      - cfip.1323123.xyz-443-2
+      - cnamefuckxxs.yuchen.icu-443-2
+      - cloudflare-ip.mofashi.ltd-443-2
+      - 115155.xyz-443-2
+      - cname.xirancdn.us-443-2
+      - f3058171cad.002404.xyz-443-2
+      - 8.889288.xyz-443-2
+      - cdn.tzpro.xyz-443-2
+      - cf.877771.xyz-443-2
+      - xn--b6gac.eu.org-443-2
+      - cloudflare.182682.xyz-443-3
+      - speed.marisalnc.com-443-3
+      - freeyx.cloudflare88.eu.org-443-3
+      - bestcf.top-443-3
+      - cdn.2020111.xyz-443-3
+      - cfip.cfcdn.vip-443-3
+      - cf.0sm.com-443-3
+      - cf.090227.xyz-443-3
+      - cf.zhetengsha.eu.org-443-3
+      - cloudflare.9jy.cc-443-3
+      - cf.zerone-cdn.pp.ua-443-3
+      - cfip.1323123.xyz-443-3
+      - cnamefuckxxs.yuchen.icu-443-3
+      - cloudflare-ip.mofashi.ltd-443-3
+      - 115155.xyz-443-3
+      - cname.xirancdn.us-443-3
+      - f3058171cad.002404.xyz-443-3
+      - 8.889288.xyz-443-3
+      - cdn.tzpro.xyz-443-3
+      - cf.877771.xyz-443-3
+      - xn--b6gac.eu.org-443-3
+
+rules:
+  # 🤖 OpenAI / ChatGPT
+  - DOMAIN-KEYWORD,chatgpt,hl13893j
+  - DOMAIN-SUFFIX,chatgpt.com,hl13893j
+  - DOMAIN-SUFFIX,openai.com,hl13893j
+  - DOMAIN-SUFFIX,api.openai.com,hl13893j
+  - DOMAIN-SUFFIX,openaicom.imgix.net,hl13893j
+  - DOMAIN-SUFFIX,openaiassets.com,hl13893j
+  - DOMAIN-SUFFIX,completion.openaai.com,hl13893j
+
+  # 🧠 Anthropic / Claude
+  - DOMAIN-KEYWORD,claude,hl13893j
+  - DOMAIN-SUFFIX,claude.ai,hl13893j
+  - DOMAIN-SUFFIX,platform.claude.ai,hl13893j
+  - DOMAIN-SUFFIX,code.claude.ai,hl13893j
+  - DOMAIN-SUFFIX,anthropic.com,hl13893j
+  - DOMAIN-SUFFIX,api.anthropic.com,hl13893j
+
+  # 📺 YouTube / 視頻高流量前置優先（確保高流量 100% 直連不浪費代理點）
+  - DOMAIN-SUFFIX,googlevideo.com,DIRECT
+  - DOMAIN-SUFFIX,ytimg.com,DIRECT
+  - DOMAIN-SUFFIX,youtube.com,DIRECT
+  - DOMAIN-SUFFIX,youtu.be,DIRECT
+
+  # 🔑 Google 核心認證、API、DoH 安全 DNS 加速（AI Studio 登錄加載與可用地區文檔必備，不容缺少）
+  - DOMAIN-KEYWORD,google,hl13893j
+  - DOMAIN-KEYWORD,googleapis,hl13893j
+  - DOMAIN-SUFFIX,gstatic.com,hl13893j
+  - DOMAIN-SUFFIX,googleusercontent.com,hl13893j
+
+  # 🔵 Gemini / Vertex / Bard / AI Studio 專屬後綴
+  - DOMAIN-KEYWORD,google-ai,hl13893j
+  - DOMAIN-KEYWORD,gemini,hl13893j
+  - DOMAIN-SUFFIX,aistudio.google.com,hl13893j
+  - DOMAIN-SUFFIX,ai.google.dev,hl13893j
+  - DOMAIN-SUFFIX,makersuite.google.com,hl13893j
+  - DOMAIN-SUFFIX,bard.google.com,hl13893j
+  - DOMAIN-SUFFIX,gemini.google.com,hl13893j
+  - DOMAIN-SUFFIX,generativelanguage.googleapis.com,hl13893j
+  - DOMAIN-SUFFIX,vertexai.cloud.google.com,hl13893j
+  - DOMAIN-SUFFIX,aiplatform.googleapis.com,hl13893j
+
+  # 🐍 DeepSeek / Perplexity / Grok (AI 代理點)
+  - DOMAIN-SUFFIX,perplexity.ai,hl13893j
+  - DOMAIN-SUFFIX,api.perplexity.ai,hl13893j
+  - DOMAIN-SUFFIX,grok.com,hl13893j
+
+  # 🌐 常規出口 IP 檢測方便調試
+  - DOMAIN-SUFFIX,ip.sb,hl13893j
+  - DOMAIN-SUFFIX,ipinfo.io,hl13893j
+
+  # 🛡️ 廣告 / 追蹤 REJECT
+  - DOMAIN-SUFFIX,doubleclick.net,REJECT
+
+  # 🌍 其他所有非中國、常規海外流量、X/Twitter、Instagram、Discord、GitHub、NPM 100% 全直連！
+  - GEOIP,CN,DIRECT
+  - MATCH,DIRECT
